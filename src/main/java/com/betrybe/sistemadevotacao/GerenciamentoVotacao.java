@@ -74,9 +74,9 @@ public class GerenciamentoVotacao implements GerenciamentoVotacaoInterface {
     for (PessoaCandidata candidato : this.pessoasCandidatas) {
       String nomeCandidato = candidato.getNome();
       int votosCandidato = candidato.getVotos();
-      int votosPercentuais = Math.round((votosCandidato / totalVotos) * 100);
+      double votosPercentuais = Math.round(((double) votosCandidato / totalVotos) * 100);
       System.out.println(
-          "Nome: %s - %d votos ( %d%% )".formatted(nomeCandidato, votosCandidato,
+          "Nome: %s - %d votos ( %f%% )".formatted(nomeCandidato, votosCandidato,
               votosPercentuais));
     }
     System.out.println("Total de votos: " + totalVotos);
